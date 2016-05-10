@@ -149,6 +149,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.nuclear.nucleartweaks.NuclearTweaks;
+
 public class SettingsActivity extends Activity
         implements PreferenceManager.OnPreferenceTreeClickListener,
         PreferenceFragment.OnPreferenceStartFragmentCallback,
@@ -298,6 +300,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.privacy_settings_cyanogenmod,
+            R.id.nucleartweaks,
             R.id.button_settings
     };
 
@@ -381,6 +384,7 @@ public class SettingsActivity extends Activity
             ContributorsCloudFragment.class.getName(),
             NotificationManagerSettings.class.getName(),
             LiveLockScreenSettings.class.getName(),
+            NuclearTweaks.class.getName(),
             WeatherServiceSettings.class.getName()
     };
 

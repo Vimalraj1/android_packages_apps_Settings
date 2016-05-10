@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- Customization -->
+    <string name="header_category_custom">Customization</string>
+    <string name="custom_title">Nuclear Tweaks</string>
+    <string name="header_category_personalization">Personalization</string>
+</resources>
