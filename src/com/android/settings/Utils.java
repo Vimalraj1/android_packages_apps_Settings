@@ -109,6 +109,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
+import com.android.settings.nucleartweaks.tabs.Navigation;
+
 import static android.content.Intent.EXTRA_USER;
 
 public final class Utils {
@@ -732,7 +734,7 @@ public final class Utils {
     public static boolean hasVolumeRocker(Context context) {
         final int deviceKeys = context.getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
-        return (deviceKeys & ButtonSettings.KEY_MASK_VOLUME) != 0;
+        return (deviceKeys & Navigation.KEY_MASK_VOLUME) != 0;
     }
 
     public static boolean isPackageInstalled(Context context, String pkg, boolean ignoreState) {

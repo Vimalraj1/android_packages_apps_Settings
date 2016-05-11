@@ -149,7 +149,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.nuclear.nucleartweaks.NuclearTweaks;
+import com.android.settings.nucleartweaks.NuclearTweaks;
+
 
 public class SettingsActivity extends Activity
         implements PreferenceManager.OnPreferenceTreeClickListener,
@@ -300,8 +301,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.privacy_settings_cyanogenmod,
-            R.id.nucleartweaks,
-            R.id.button_settings
+            R.id.nucleartweaks
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1330,13 +1330,7 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                } else if (id == R.id.button_settings) {
-                    boolean hasDeviceKeys = getResources().getInteger(
-                            com.android.internal.R.integer.config_deviceHardwareKeys) != 0;
-                    if (!hasDeviceKeys) {
-                        removeTile = true;
-                    }
-                } else if (id == R.id.weather_settings) {
+                }  else if (id == R.id.weather_settings) {
                     if (!getPackageManager().hasSystemFeature(
                             CMContextConstants.Features.WEATHER_SERVICES)) {
                         removeTile = true;

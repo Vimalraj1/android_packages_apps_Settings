@@ -22,7 +22,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.android.settings.ButtonSettings;
+import com.android.settings.nucleartweaks.tabs.Navigation;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.contributors.ContributorsCloudFragment;
@@ -40,7 +40,7 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context ctx, Intent intent) {
         if (!hasRestoredTunable(ctx)) {
             /* Restore the hardware tunable values */
-            ButtonSettings.restoreKeyDisabler(ctx);
+            Navigation.restoreKeyDisabler(ctx);
             VibratorIntensity.restore(ctx);
             InputMethodAndLanguageSettings.restore(ctx);
             setRestoredTunable(ctx);

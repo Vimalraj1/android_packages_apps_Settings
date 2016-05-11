@@ -14,14 +14,8 @@ LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
         src/com/android/settings/EventLogTags.logtags
 
-LOCAL_SRC_FILES += $(call all-java-files-under, ../NuclearTweaks/src)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-
-LOCAL_RESOURCE_DIR += packages/apps/NuclearTweaks/res
-
-LOCAL_AAPT_FLAGS := --auto-add-overlay \
-	--extra-packages com.nuclear.nucleartweaks
 
 LOCAL_SRC_FILES += \
         src/com/android/display/IPPService.aidl

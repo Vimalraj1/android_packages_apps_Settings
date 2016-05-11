@@ -20,7 +20,7 @@
 
 -keep class com.android.settings.cyanogenmod.*Settings
 -keep class com.android.settings.privacyguard.*
--keep class com.nuclear.nucleartweaks.**
+-keep class com.android.settings.nucleartweaks.**
 
 # These would be stripped out since they are being created with reflection
 -keep class com.android.settings.dashboard.GenericSwitchToggle { *; }

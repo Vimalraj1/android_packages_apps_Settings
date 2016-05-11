@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2013 The CyanogenMod project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.android.settings;
+package com.android.settings.nucleartweaks.tabs;
 
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -59,9 +43,9 @@ import java.util.List;
 
 import static android.provider.Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED;
 
-public class ButtonSettings extends SettingsPreferenceFragment implements
+public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "SystemSettings";
+    private static final String TAG = "Navigation";
 
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
@@ -148,9 +132,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.button_settings);
-
-        final Resources res = getResources();
+        addPreferencesFromResource(R.xml.navigation);
+       final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
