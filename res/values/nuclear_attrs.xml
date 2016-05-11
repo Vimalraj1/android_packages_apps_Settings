@@ -50,4 +50,11 @@
     <declare-styleable name="ColorPreference">
         <attr name="defaultColorValue" format="integer" />
     </declare-styleable>
+
+    <!-- Network Traffic-->
+    <declare-styleable name="SeekBarPreference">
+		<attr name="netMin" format="integer" />
+    	<attr name="netUnitsLeft" format="string" />
+    	<attr name="netUnitsRight" format="string" />
+     </declare-styleable>
 </resources>

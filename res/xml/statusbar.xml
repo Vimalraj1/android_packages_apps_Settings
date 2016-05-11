@@ -6,6 +6,12 @@
     android:layout="@layout/preference_tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="network_traffic_state"
+        android:fragment="com.android.settings.nucleartweaks.NetworkTraffic"
+        android:summary="@string/network_traffic_summary"
+        android:title="@string/network_traffic_title" />
+
    <PreferenceScreen
         android:key="status_bar_icons"
         android:title="@string/status_bar_icons_title"
