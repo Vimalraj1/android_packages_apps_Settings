@@ -6,6 +6,14 @@
     android:layout="@layout/preference_tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- gesture_anywhere -->
+        <PreferenceScreen
+            android:key="gesture_anywhere"
+            android:fragment="com.android.settings.nucleartweaks.gestureanywhere.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title" 
+            android:icon="@drawable/ic_settings_gestures">
+            </PreferenceScreen>
+
 <SwitchPreference
         android:key="disable_nav_keys"
         android:title="@string/disable_navkeys_title"

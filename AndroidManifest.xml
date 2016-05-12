@@ -610,6 +610,9 @@
                 android:value="com.android.settings.nucleartweaks.NuclearTweaks" />
         </activity>
 
+        <!--Gesture AnyWhere-->
+        <activity android:name=".nucleartweaks.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".nucleartweaks.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 
         <activity android:name="Settings$KeyboardLayoutPickerActivity"
                 android:label="@string/keyboard_layout_picker_title"
