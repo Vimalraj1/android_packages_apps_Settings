@@ -1,18 +1,29 @@
 package com.android.settings.nucleartweaks.tabs;
 
+import android.app.AlertDialog;
+import android.app.Dialog; 
+import android.content.DialogInterface;
+import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.content.pm.PackageManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.EditText;
 import android.view.View;
 
 import com.android.internal.logging.MetricsLogger;
@@ -23,10 +34,12 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import cyanogenmod.providers.CMSettings;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -66,11 +79,23 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        createCustomView();
+    }
+
+    private PreferenceScreen createCustomView() {
         mCheckPreferences = false;
         addPreferencesFromResource(R.xml.statusbar);
 
-		PreferenceScreen prefSet = getPreferenceScreen();
-
+        PreferenceScreen prefSet = getPreferenceScreen();
+        PackageManager pm = getPackageManager();
+        Resources systemUiResources;
+        try {
+            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            Log.e(TAG, "can't access systemui resources",e);
+            return null;
+        }
+        
         ContentResolver resolver = getActivity().getContentResolver();
 
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
@@ -354,8 +379,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return frag;
         }
 
-        StatusBarClockStyle getOwner() {
-            return (StatusBarClockStyle) getTargetFragment();
+        StatusBar getOwner() {
+            return (StatusBar) getTargetFragment();
         }
 
         @Override

@@ -276,28 +276,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         initPulse((PreferenceCategory) findPreference(KEY_CATEGORY_LIGHTS));
     }
 
-    private int getDefaultDensity() {
-        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
-                Context.WINDOW_SERVICE));
-        try {
-            return wm.getInitialDisplayDensity(Display.DEFAULT_DISPLAY);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return DisplayMetrics.DENSITY_DEVICE;
-    }
-
-    private int getCurrentDensity() {
-        IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
-                Context.WINDOW_SERVICE));
-        try {
-            return wm.getBaseDisplayDensity(Display.DEFAULT_DISPLAY);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return DisplayMetrics.DENSITY_DEVICE;
-    }
-
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
                 com.android.internal.R.bool.config_allowAllRotations);
@@ -538,47 +516,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mScreenSaverPreference.setSummary(
                     DreamSettings.getSummaryTextWithDreamName(getActivity()));
         }
-    }
-
-    private void writeLcdDensityPreference(final Context context, final int density) {
-        final IActivityManager am = ActivityManagerNative.asInterface(
-                ServiceManager.checkService("activity"));
-        final IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
-                Context.WINDOW_SERVICE));
-        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected void onPreExecute() {
-                ProgressDialog dialog = new ProgressDialog(context);
-                dialog.setMessage(getResources().getString(R.string.restarting_ui));
-                dialog.setCancelable(false);
-                dialog.setIndeterminate(true);
-                dialog.show();
-            }
-            @Override
-            protected Void doInBackground(Void... params) {
-                // Give the user a second to see the dialog
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    // Ignore
-                }
-
-                try {
-                    wm.setForcedDisplayDensity(Display.DEFAULT_DISPLAY, density);
-                } catch (RemoteException e) {
-                    Log.e(TAG, "Failed to set density to " + density, e);
-                }
-
-                // Restart the UI
-                try {
-                    am.restart();
-                } catch (RemoteException e) {
-                    Log.e(TAG, "Failed to restart");
-                }
-                return null;
-            }
-        };
-        task.execute();
     }
 
     // === Pulse notification light ===
