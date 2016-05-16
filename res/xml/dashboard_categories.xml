@@ -105,8 +105,7 @@
                 android:fragment="com.android.settings.nucleartweaks.NuclearTweaks"
                 android:icon="@drawable/ic_nuclear_exposed"
                 />
-	</dashboard-category>
-
+	
 	<!-- Themes -->
         <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
         <dashboard-tile
@@ -118,6 +117,8 @@
                 <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
             </intent>
         </dashboard-tile>
+        
+    </dashboard-category>
 
     <!-- DEVICE -->
     <dashboard-category
