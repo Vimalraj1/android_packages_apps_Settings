@@ -6,6 +6,10 @@
     android:layout="@layout/preference_tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    
+    <!-- DPI chooser -->
+	<ListPreference
+	    android:key="lcd_density"
+	    android:title="@string/lcd_density"
+	    android:persistent="false" />
 
 </PreferenceScreen>
