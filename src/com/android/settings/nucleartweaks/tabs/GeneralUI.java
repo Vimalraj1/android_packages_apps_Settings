@@ -34,13 +34,17 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 
+import com.android.settings.dashboard.DashboardContainerView;
+
 public class GeneralUI extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "GeneralUI";
 
     private static final String KEY_LCD_DENSITY = "lcd_density";
+    private static final String DASHBOARD_COLUMNS = "dashboard_columns";
 
     private ListPreference mLcdDensityPreference;
+    private ListPreference mDashboardColumns;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,12 @@ public class GeneralUI extends SettingsPreferenceFragment implements
             }
         }
 
+        mDashboardColumns = (ListPreference) findPreference(DASHBOARD_COLUMNS);
+        mDashboardColumns.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.DASHBOARD_COLUMNS, DashboardContainerView.mDashboardValue)));
+        mDashboardColumns.setSummary(mDashboardColumns.getEntry());
+        mDashboardColumns.setOnPreferenceChangeListener(this);
+
       
     }
 
@@ -122,6 +132,13 @@ public class GeneralUI extends SettingsPreferenceFragment implements
                 showLcdConfirmationDialog((String) objValue);
             }
             return false;
+        }
+        if (preference == mDashboardColumns) {
+            Settings.System.putInt(getContentResolver(), Settings.System.DASHBOARD_COLUMNS,
+                    Integer.valueOf((String) objValue));
+            mDashboardColumns.setValue(String.valueOf(objValue));
+            mDashboardColumns.setSummary(mDashboardColumns.getEntry());
+            return true;
         }
         return true;
     }
