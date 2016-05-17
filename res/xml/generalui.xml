@@ -6,6 +6,13 @@
     android:layout="@layout/preference_tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="show_su_indicator"
+        android:title="@string/su_indicator"
+        android:summaryOn="@string/su_indicator_summary_on"
+        android:summaryOff="@string/su_indicator_summary_off"
+        android:defaultValue="true" />
+
     <!-- DPI chooser -->
 	<ListPreference
 	    android:key="lcd_density"
