@@ -28,4 +28,11 @@
         android:summary="@string/dashboard_columns_summary"
         android:persistent="false" />
 
+    <!-- gesture_anywhere -->
+        <PreferenceScreen
+            android:key="gesture_anywhere"
+            android:fragment="com.android.settings.nucleartweaks.gestureanywhere.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title">
+            </PreferenceScreen>
+
 </PreferenceScreen>
