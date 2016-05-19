@@ -158,11 +158,9 @@ public class NuclearTweaks extends SettingsPreferenceFragment {
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new GeneralUI();
-            //frags[1] = new LockScreen();
-            frags[1] = new StatusBar();
-            frags[2] = new Navigation();
-            frags[3] = new Recents();
-            frags[4] = new System();
+            frags[1] = new LockScreen();
+            frags[2] = new StatusBar();
+            frags[3] = new Navigation();
         }
 
         @Override
@@ -186,11 +184,9 @@ public class NuclearTweaks extends SettingsPreferenceFragment {
         
         titleString = new String[]{
                     getString(R.string.generalui_category),
-                    //getString(R.string.lockscreen_category),
+                    getString(R.string.lockscreen_category),
                     getString(R.string.statusbar_category),
-                    getString(R.string.navigation_category),
-                    getString(R.string.multitasking_category),
-                    getString(R.string.system_category)};
+                    getString(R.string.navigation_category)};
         
         return titleString;
     }

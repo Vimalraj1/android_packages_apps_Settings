@@ -10,7 +10,7 @@
     <!-- Tabs -->
     <string name="generalui_category">General UI</string>
     <string name="statusbar_category">Status Bar</string>
-    <string name="navigation_category">Navigation Bar</string>
+    <string name="navigation_category">Buttons</string>
     <string name="multitasking_category">Recents</string>
     <string name="system_category">System</string>
     <string name="lockscreen_category">LockScreen Settings</string>
@@ -148,4 +148,9 @@
     <string name="dashboard_columns_default">One (default)</string>
     <string name="dashboard_columns_two">Two</string>
     <string name="dashboard_columns_three">Three</string>
+
+    <!-- Qucik unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
 </resources>
