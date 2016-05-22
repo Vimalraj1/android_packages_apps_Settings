@@ -17,6 +17,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+        <!-- NucleaRom Logotype -->
+        <PreferenceScreen android:key="nuclear_logo"
+                          android:fragment="com.android.settings.nucleartweaks.about"
+                          android:layout="@layout/nuclear_logo_row" />
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
