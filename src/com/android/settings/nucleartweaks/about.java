@@ -55,11 +55,8 @@ public static final String TAG = "about";
     
 private static final String NS_ROM_SHARE = "share";
     
-    Preference mForumUrl;
-    Preference mKernelUrl;
     Preference mSourceUrl;
     Preference mDonateUrl;
-    Preference mChangeUrl;
     Preference mSourcebaseUrl;
     
     @Override
@@ -68,11 +65,8 @@ private static final String NS_ROM_SHARE = "share";
         addPreferencesFromResource(R.xml.nuclear_about);
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getContentResolver();
-        mKernelUrl = findPreference("ns_kernel");
-        mForumUrl = findPreference("ns_forum");
         mSourceUrl = findPreference("ns_source");
         mDonateUrl = findPreference("ns_donate");
-        mChangeUrl = findPreference("ns_change");
         mSourcebaseUrl = findPreference("ns_sourcebase");
     }
 
@@ -83,19 +77,13 @@ private static final String NS_ROM_SHARE = "share";
     
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mForumUrl) {
-            launchUrl("http://forum.xda-developers.com/oneplus-one/development/rom-kernel-nuclearrom-reborn-t3266738");
-        } else if (preference == mKernelUrl) {
-            launchUrl("http://forum.xda-developers.com/oneplus-one/development/radioactivekernel-team-nuclear-t3119830");
-        } else if (preference == mSourceUrl) {
+        if (preference == mSourceUrl) {
             launchUrl("https://github.com/OneRomOne");
         } else if (preference == mDonateUrl) {
             launchUrl("http://paypal.me/TeamNuclear");
         } else if (preference == mSourcebaseUrl) {
             launchUrl("https://github.com/CyanogenMod");
-        } else if (preference == mChangeUrl) {
-            launchUrl("https://www.androidfilehost.com/?w=files&flid=38721");
-        } else if (preference.getKey().equals(NS_ROM_SHARE)) {
+        }  else if (preference.getKey().equals(NS_ROM_SHARE)) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
             intent.setType("text/plain");

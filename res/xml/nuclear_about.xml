@@ -13,21 +13,6 @@
     <PreferenceCategory
         android:key="links"
         android:title="@string/ns"> 
-        <!-- Change Log -->
-        <Preference 
-            android:key="ns_change"
-            android:title="@string/changelog_title"
-            android:summary="@string/changelog_title_summary" />
-        <!-- Foro -->     
-        <Preference
-            android:key="ns_forum"
-            android:title="@string/ns_forum_title"
-            android:summary="@string/ns_forum_summary" />
-        <!-- pagina kernel -->  
-        <Preference
-            android:key="ns_kernel"
-            android:title="@string/ns_kernel_title"
-            android:summary="@string/ns_kernel_summary" />
         <!-- sources github -->
         <Preference
             android:key="ns_source"
