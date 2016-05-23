@@ -13,7 +13,7 @@
     <string name="navigation_category">Buttons</string>
     <string name="multitasking_category">Recents</string>
     <string name="system_category">System</string>
-    <string name="lockscreen_category">LockScreen Settings</string>
+    <string name="lockscreen_category">LockScreen</string>
 
     <!-- Tab GeneralUI -->
     <string name="appearance_settings_title">Appearance Settings</string>
@@ -42,7 +42,7 @@
     <string name="show_network_traffic_2000">2000 ms</string>
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
- 	<string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
     <string name="network_traffic_color_style">Color style</string>
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
@@ -136,7 +136,7 @@
     <string name="default_string">Default</string>
     <string name="reset">Reset</string>
 
-	<!-- Superuser indicator on status bar -->
+    <!-- Superuser indicator on status bar -->
     <string name="su_indicator">Superuser indicator</string>
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
     <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
@@ -168,12 +168,12 @@
     <string name="ns_forum_title">NucleaRom ForumSite</string>
     <string name="ns_forum_summary">Consulta las ultimas descargas</string>
     <string name="ns_source_title">Github</string>
-    <string name="ns_source_summary">NRR Sources</string>
+    <string name="ns_source_summary">NucleaRom Sources</string>
     <string name="sourcebase_title">Source Base</string>
     <string name="title_about">Acerca de NucleaRom</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">Consulta los changelogs</string>
-    <string name="team_nuclear">Miembros TeamNuclear</string>
+    <string name="team_nuclear">Miembros NuclearTeam</string>
     <string name="moludo">Moludo</string>
     <string name="lozo">Lozo</string>
     <string name="acuicultor">Acuicultor</string>
