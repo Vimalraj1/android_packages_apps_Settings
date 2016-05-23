@@ -84,7 +84,6 @@ public class PowerUsageSummary extends PowerUsageBase
 
     private static final String KEY_BATTERY_HISTORY = "battery_history";
     private static final String KEY_PERF_PROFILE = "pref_perf_profile";
-    private static final String KEY_PER_APP_PROFILES = "app_perf_profiles_enabled";
 
     private static final String KEY_BATTERY_SAVER = "low_power";
 
@@ -97,7 +96,6 @@ public class PowerUsageSummary extends PowerUsageBase
     private BatteryHistoryPreference mHistPref;
     private PreferenceGroup mAppListGroup;
     private ListPreference mPerfProfilePref;
-    private SwitchPreference mPerAppProfiles;
     private SwitchPreference mBatterySaverPref;
 
     private String[] mPerfProfileEntries;
@@ -142,12 +140,9 @@ public class PowerUsageSummary extends PowerUsageBase
 
         mNumPerfProfiles = mPerf.getNumberOfProfiles();
         mPerfProfilePref = (ListPreference) findPreference(KEY_PERF_PROFILE);
-        mPerAppProfiles = (SwitchPreference) findPreference(KEY_PER_APP_PROFILES);
         if (mNumPerfProfiles < 1) {
             removePreference(KEY_PERF_PROFILE);
-            removePreference(KEY_PER_APP_PROFILES);
             mPerfProfilePref = null;
-            mPerAppProfiles = null;
         } else {
             // Remove the battery saver switch, power profiles have 3 modes
             removePreference(KEY_BATTERY_SAVER);
@@ -492,8 +487,6 @@ public class PowerUsageSummary extends PowerUsageBase
             return;
         }
         mPerfProfilePref.setValue(String.valueOf(mPerf.getPowerProfile()));
-        mPerAppProfiles.setEnabled(
-            mPerf.getProfileHasAppProfiles(mPerf.getPowerProfile()));
         updatePerformanceSummary();
     }
 
