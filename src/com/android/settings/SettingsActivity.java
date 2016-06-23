@@ -302,6 +302,7 @@ public class SettingsActivity extends Activity
             R.id.dashboard,
             R.id.privacy_settings_cyanogenmod,
             R.id.nucleartweaks
+
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1330,7 +1331,7 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                }  else if (id == R.id.weather_settings) {
+                } else if (id == R.id.weather_settings) {
                     final boolean showWeatherMenu = getResources()
                             .getBoolean(R.bool.config_showWeatherMenu);
 
