@@ -71,4 +71,12 @@
         settings:unitsRight="%"
         android:dependency="gesture_anywhere_enabled" />
 
+     <!-- Three-fingers-swipe to screenshot -->
+    <PreferenceCategory>
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="three_finger_gesture"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
