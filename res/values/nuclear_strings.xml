@@ -191,6 +191,7 @@
     <string name="ns_sourcebase">CyanogenMod</string>
     <string name="ns_sourcebase_sumary">https://github.com/CyanogenMod</string>
 
+
     <!-- Heads Up Timeout -->
     <string name="heads_up_time_out_title">Time out</string>
     <string name="heads_up_time_out_summary">Notification will show for <xliff:g id="number">%d</xliff:g> seconds</string>
@@ -217,4 +218,9 @@
     <!-- Force Heads Up on all applications -->
     <string name="force_headsup_title">Force heads up</string>
     <string name="force_headsup_summary">Force heads up in all applications</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+
 </resources>
