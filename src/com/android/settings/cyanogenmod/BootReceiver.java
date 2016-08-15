@@ -24,7 +24,6 @@ import android.preference.PreferenceManager;
 
 
 import com.android.settings.nucleartweaks.tabs.Navigation;
-import com.android.settings.ButtonSettings;
 import com.android.settings.DisplaySettings;
 import com.android.settings.R;
 import com.android.settings.Utils;
