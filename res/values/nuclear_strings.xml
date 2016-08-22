@@ -232,4 +232,14 @@
     <string name="changelog_crdroid_title">Changelog</string>
     <string name="changelog_crdroid_error">Unable to load changelog</string>
 
+    <!-- UBER GCC version info -->
+    <string name="uber_android">GCC Android</string>
+    <string name="uber_android_default">Unknown</string>
+    <string name="uber_kernel">GCC Kernel</string>
+    <string name="uber_kernel_default">Unknown</string>
+
+    <!-- UBER GCC build flags info -->
+    <string name="uber_flags">Build Flags</string>
+    <string name="uber_flags_default">None</string>
+
 </resources>
