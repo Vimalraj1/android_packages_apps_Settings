@@ -1334,6 +1334,15 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
+                } else if (id == R.id.nuclearota_settings) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.delozoya.nuclearota", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
                 } else if (id == R.id.weather_settings) {
                     final boolean showWeatherMenu = getResources()
                             .getBoolean(R.bool.config_showWeatherMenu);
