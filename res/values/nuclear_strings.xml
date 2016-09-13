@@ -246,4 +246,6 @@
     <string name="double_tap_sleep_anywhere_title">DT2S on Lockscreen</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
 
+    <string name="nuclearota_title">NuclearOTA</string>
+
 </resources>
